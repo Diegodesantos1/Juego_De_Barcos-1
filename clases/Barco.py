@@ -1,8 +1,11 @@
-class Barco:
-    instances = []
-    casillas_ocupadas = set()
+from clases.Tablero import *
+from clases.Case import *
+from clases.Conventions import *
 
-    def __init__(self, longitud):
+instances = []
+casillas_ocupadas = set()
+
+def __init__(self, longitud):
         self.longitud = longitud
         self.orientacion = choice(ORIENTACIONES)
         self.tocado = False
@@ -44,7 +47,7 @@ class Barco:
                 Barco.casillas_ocupadas |= self.casillas
                 break  # break relativo al "while True:"
 
-    @classmethod
-    def generar_barcos(cls):
+@classmethod
+def generar_barcos(cls):
         for longitud in Conventions.barcos_longitud:
             Barco(longitud)
