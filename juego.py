@@ -45,7 +45,7 @@ def jugar_tirada(self):
             nombre_casilla = solicitar_introducir_casilla(
                 "Seleccionar una casilla (letra + cifra)")
             # Encontrar la casilla a partir de su nombre
-            casilla = self.instances[nombre_casilla]
+            casilla = self.Case.instances[nombre_casilla]
             # Probar si la casilla ya ha sido jugada
             if casilla.jugada:
                 print("Esta casilla ya ha sido jugada, elija otra",
