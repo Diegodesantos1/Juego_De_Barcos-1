@@ -7,6 +7,7 @@ from clases.Case import *
 from clases.Barco import *
 from clases.Tablero import *
 from clases.Conventions import *
+from introducir import *
 
 
 from introducir import (
