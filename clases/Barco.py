@@ -1,6 +1,6 @@
-from clases.Tablero import *
-from clases.Case import *
-from clases.Conventions import *
+from Tablero import *
+from Case import *
+from Conventions import *
 
 instances = []
 casillas_ocupadas = set()
@@ -24,7 +24,7 @@ def __init__(self, longitud):
                 letra = num2l(rang)
                 cifras = [num2c(x) for x in range(primero, primero + longitud)]
                 self.casillas = {Case.instances[l + c]
-                              for l, c in product(repeat(letra, longitud), cifras)}
+                for l, c in product(repeat(letra, longitud), cifras)}
             else:
                 rang = choice(range(num_columnas))
                 primero = choice(range(num_lineas + 1 - longitud))
@@ -32,7 +32,7 @@ def __init__(self, longitud):
                 letras = [num2l(x) for x in range(primero, primero + longitud)]
                 # Crear el barco
                 self.casillas = {Case.instances[l + c]
-                              for l, c in product(letras, repeat(cifra, longitud))}
+                for l, c in product(letras, repeat(cifra, longitud))}
 
             for existente in Barco.instances:
                 if self.casillas.intersection(existente.casillas):
