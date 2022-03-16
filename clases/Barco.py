@@ -1,6 +1,7 @@
 from Tablero import *
 from Case import *
 from Conventions import *
+from juego import *
 instances = []
 casillas_ocupadas = set()
 
@@ -33,17 +34,17 @@ def __init__(self, longitud):
                 self.casillas = {self.Case.instances[l + c]
                 for l, c in product(letras, repeat(cifra, longitud))}
 
-            for existente in Barco.instances:
+            for existente in self.Barco.instances:
                 if self.casillas.intersection(existente.casillas):
                     break  # break relativo al "for existente in barcos:"
             else:
                 # Agregar el barco en el contenedor de barcos
-                Barco.instances.append(self)
+                self.Barco.instances.append(self)
                 # Informar la casilla que contiene un barco.
                 for casilla in self.casillas:
                     casilla.barco = self
                 # Agregar estas casillas a las casillas ocupadas :
-                Barco.casillas_ocupadas |= self.casillas
+                self.Barco.casillas_ocupadas |= self.casillas
                 break  # break relativo al "while True:"
 
 @classmethod
