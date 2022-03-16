@@ -17,5 +17,5 @@ def generar_num_columna(y):
 @staticmethod
 def generar_nombre_casilla(x, y):
     return generar_num_linea(x) +\
-           generar_num_columna(y)
+        generar_num_columna(y)
 

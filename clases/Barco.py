@@ -8,7 +8,7 @@ casillas_ocupadas = set()
 
 def __init__(self, longitud):
         self.longitud = longitud
-        self.orientacion = choice(ORIENTACIONES)
+        self.orientacion = choice(classmethod.ORIENTACIONES)
         self.tocado = False
         self.hundido = False
 
