@@ -1,6 +1,9 @@
 """
 Módulo que gestiona todas las funcionalidades de introducción de datos
 """
+from introducir.numero import *
+from introducir.buleano import *
+from introducir.cadena import *
 
 from introducir.numero import (
     solicitar_introducir_numero,
