@@ -54,7 +54,6 @@ def solicitar_introducir_letra(invite):
             # Tenemos lo que queremos, salimos del bucle saliendo de la función
             return datoIntroducido
         elif datoIntroducido in string.ascii_uppercase:
-            
             return datoIntroducido.lower()
 
 
@@ -96,6 +95,6 @@ def solicitar_introducir_casilla(invite):
                 file=sys.stderr)
         else:
             # Todos los carácters se han probado y son letras.
-            return datoIntroducido.upper()
+            return datoIntroducido.upper(invite)
 
 
