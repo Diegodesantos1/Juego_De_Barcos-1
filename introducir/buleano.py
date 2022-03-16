@@ -10,14 +10,14 @@ VERDADERO = ("v", "verdadero", "t", "true", "1")
 def solicitar_introducir_si_o_no(invite):
     """Por defecto, toda respuesta no incluida vale NO"""
     try:
-        return input(invite).lower(invite) in SI
+        return input(invite).lower() in SI
     except:
         return False
 
 def solicitar_introducir_verdadero_o_falso(invite):
     """Por defecto, toda respuesta no incluida vale FALSO"""
     try:
-        return input(invite).lower(invite) in VERDADERO
+        return input(invite).lower() in VERDADERO
     except:
         return False
 

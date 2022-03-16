@@ -34,7 +34,7 @@ def solicitar_introducir_char(invite):
             # No se ha introducido nada
             print("Al menos debe indicar un carácter.", file=sys.stderr)
         elif len(datoIntroducido) > 1:
-            # No se ha introducido nada 
+            # No se ha introducido nada
             print("Debe indicar un único carácter.", file=sys.stderr)
         else:
             # Tenemos lo que queremos, salimos del bucle saliendo de la función
@@ -95,6 +95,6 @@ def solicitar_introducir_casilla(invite):
                 file=sys.stderr)
         else:
             # Todos los carácters se han probado y son letras.
-            return datoIntroducido.upper(invite)
+            return datoIntroducido.upper()
 
 
