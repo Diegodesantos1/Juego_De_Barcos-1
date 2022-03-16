@@ -12,7 +12,6 @@ def __init__(self, x, y):
   self.y = y
   # Queremos poder acceder a una casilla a partir de sus coordenadas
   instances[x, y] = self
-  
   # Generación del nombre de la casilla
   self._generar_nombre()
   # Queremos poder acceder a una casilla a partir de su nombre
