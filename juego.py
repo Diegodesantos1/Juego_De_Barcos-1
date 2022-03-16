@@ -32,7 +32,7 @@ ORIENTACIONES = (VERTICAL, HORIZONTAL)
 
 def probar_fin_juego(self):
         """Permite probar si el juego ha terminado o no"""
-        if len(Barco.casillas_ocupadas - self.casillas_jugadas) == 0:
+        if len(self.Barco.casillas_ocupadas - self.Barco.casillas_jugadas) == 0:
             print("Bravo. El juego ha terminado !")
             return True
 
@@ -45,7 +45,7 @@ def jugar_tirada(self):
             nombre_casilla = solicitar_introducir_casilla(
                 "Seleccionar una casilla (letra + cifra)")
             # Encontrar la casilla a partir de su nombre
-            casilla = Case.instances[nombre_casilla]
+            casilla = self.instances[nombre_casilla]
             # Probar si la casilla ya ha sido jugada
             if casilla.jugada:
                 print("Esta casilla ya ha sido jugada, elija otra",
@@ -58,7 +58,7 @@ def jugar_una_partida():
     """Algoritmo de una partida"""
     # Creamos un tablero de juego vacío
 
-    tablero = TaTablero()
+    tablero = tablero()
 
     while True:
         tablero.ver()

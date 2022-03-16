@@ -1,5 +1,5 @@
-from clases.Tablero import *
-from clases.Barco import *
+from Tablero import *
+from Barco import *
 from Conventions import *
 
 

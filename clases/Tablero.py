@@ -1,21 +1,20 @@
-from clases.Case import *
-from clases.Barco import *
+from Case import *
+from Barco import *
 from Conventions import *
 
 
 
 def __init__(self):
 # Creamos las casillas:
-  generar_casillas()
+  self.generar_casillas()
 
   # Creamos los barcos:
-  generar_barcos()
-  
+  self.generar_barcos()
   # performance / legibilidad:
-  num_lineas = Conventions.tablero_num_lineas
-  num_columnas = Conventions.tablero_num_columnas
-  num2l = Conventions.generar_num_linea
-  num2c = Conventions.generar_num_columna
+  num_lineas = self.Conventions.tablero_num_lineas
+  num_columnas = self.Conventions.tablero_num_columnas
+  num2l = self.Conventions.generar_num_linea
+  num2c = self.Conventions.generar_num_columna
   
   # Creamos la herramienta para poder seguir la situación
   self.casillas_jugadas = set()
@@ -31,15 +30,15 @@ def ver(self):
   
   iter_etiqueta_lineas = iter(self.etiqueta_lineas)
   
-  for x, y in product(range(Conventions.tablero_num_lineas),
-                      range(Conventions.tablero_num_columnas)):
+  for x, y in product(range(self.Conventions.tablero_num_lineas),
+                      range(self.Conventions.tablero_num_columnas)):
   
       # Trazo horizontal para cada nueva línea
       if y == 0:
           print(self.trazo_horizontal)
           print(" {}".format(next(iter_etiqueta_lineas)), end="")
   
-      casilla = Case.instances[x, y]
+      casilla = self.Case.instances[x, y]
       print(" |", casilla, end="")
   
       # Ver la barra vertical derecha de la tabla:
