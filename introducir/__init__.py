@@ -3,7 +3,7 @@ Módulo que gestiona todas las funcionalidades de introducción de datos
 """
 from numero import *
 from buleano import *
-from cadena import *
+from numero import *
 
 from numero import (
     solicitar_introducir_numero,
