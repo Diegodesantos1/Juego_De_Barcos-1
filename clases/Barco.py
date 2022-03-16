@@ -1,6 +1,3 @@
-from Tablero import *
-from Case import *
-from Conventions import *
 from juego import (choice,product,repeat)
 from juego import *
 instances = []

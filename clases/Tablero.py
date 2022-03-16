@@ -1,8 +1,4 @@
-from Case import *
-from Barco import *
-from Conventions import *
-
-
+from itertools import product
 
 def __init__(self):
 # Creamos las casillas:

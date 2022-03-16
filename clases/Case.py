@@ -1,7 +1,3 @@
-from Tablero import *
-from Barco import *
-from Conventions import *
-from Case import *
 
 instances = ()
 jugadas = set()
@@ -22,7 +18,7 @@ def __init__(self, x, y):
 
 def generar_nombre(self):
   """Este método puede ser sobrecargado fácilmente"""
-  self.nombre = generar_nombre_casilla(self, self.x, self.y)
+  self.nombre = self.generar_nombre_casilla(self, self.x, self.y)
 
 def jugar(self):
   """Describe qué pasa cuando jugamos una casilla"""
@@ -38,8 +34,8 @@ def jugar(self):
 
 @classmethod
 def generar_casillas():
-  for x, y in classmethod.product(range(tablero_num_lineas),
-    range(tablero_num_columnas)):
+  for x, y in classmethod.product(range(classmethod.tablero_num_lineas),
+    range(classmethod.tablero_num_columnas)):
       classmethod.Case(x, y)
 
 def __str__(self):
