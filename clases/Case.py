@@ -3,7 +3,7 @@ from Barco import *
 from Conventions import *
 from Case import *
 
-instances = {}
+instances = ()
 jugadas = set()
 
 def __init__(self, x, y):
@@ -11,25 +11,23 @@ def __init__(self, x, y):
   self.x = x
   self.y = y
   # Queremos poder acceder a una casilla a partir de sus coordenadas
-  instances[x, y] = self
+  self.instances[x, y] = instances
   # Generación del nombre de la casilla
-  self._generar_nombre()
+  self._generar_nombre(self, x, y)
   # Queremos poder acceder a una casilla a partir de su nombre
-  instances[self.nombre] = self
-  
+  instances[self.nombre] = casillas_ocupadas
   # Evolución de la casilla
   self.jugada = False
   self.barco = None  # No toca a un barco de momento.
 
 def _generar_nombre(self):
   """Este método puede ser sobrecargado fácilmente"""
-  self.nombre = generar_nombre_casilla(self.x, self.y)
+  self.nombre = generar_nombre_casilla(self, self.x, self.y)
 
 def jugar(self):
   """Describe qué pasa cuando jugamos una casilla"""
   self.jugada = True
   self.jugadas.add(self)
-  
   if self.barco is not None:
       if len(self.casilla.barco.casillas - self.casillas_jugadas) == 0:
           print("Hundido !!")

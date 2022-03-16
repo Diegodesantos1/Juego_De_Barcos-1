@@ -1,7 +1,6 @@
 from Tablero import *
 from Case import *
 from Conventions import *
-
 instances = []
 casillas_ocupadas = set()
 
@@ -12,18 +11,18 @@ def __init__(self, longitud):
         self.hundido = False
 
         # performance / legibilidad:
-        num_lineas = Conventions.tablero_num_lineas
-        num_columnas = Conventions.tablero_num_columnas
-        num2l = Conventions.generar_num_linea
-        num2c = Conventions.generar_num_columna
+        num_lineas = self.Conventions.tablero_num_lineas
+        num_columnas = self.Conventions.tablero_num_columnas
+        num2l = self.Conventions.generar_num_linea
+        num2c = self.Conventions.generar_num_columna
 
         while True:
-            if self.orientacion == HORIZONTAL:
+            if self.orientacion == classmethod.HORIZONTAL:
                 rang = choice(range(num_lineas))
                 primero = choice(range(num_columnas + 1 - longitud))
                 letra = num2l(rang)
                 cifras = [num2c(x) for x in range(primero, primero + longitud)]
-                self.casillas = {Case.instances[l + c]
+                self.casillas = {self.Case.instances[l + c]
                 for l, c in product(repeat(letra, longitud), cifras)}
             else:
                 rang = choice(range(num_columnas))
@@ -31,7 +30,7 @@ def __init__(self, longitud):
                 cifra = num2c(rang)
                 letras = [num2l(x) for x in range(primero, primero + longitud)]
                 # Crear el barco
-                self.casillas = {Case.instances[l + c]
+                self.casillas = {self.Case.instances[l + c]
                 for l, c in product(letras, repeat(cifra, longitud))}
 
             for existente in Barco.instances:
@@ -49,5 +48,5 @@ def __init__(self, longitud):
 
 @classmethod
 def generar_barcos(cls):
-        for longitud in Conventions.barcos_longitud:
-            Barco(longitud)
+        for longitud in cls.Conventions.barcos_longitud:
+            cls.Barco(longitud)

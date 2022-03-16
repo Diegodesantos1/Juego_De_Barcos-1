@@ -42,7 +42,7 @@ def probar_fin_juego(self):
 def jugar_tirada(self):
         """Permite gestionar el dato introducido de una tirada"""
         while True:
-            nombre_casilla = solicitar_introducir_casilla(
+            nombre_casilla = self.solicitar_introducir_casilla(
                 "Seleccionar una casilla (letra + cifra)")
             # Encontrar la casilla a partir de su nombre
             casilla = self.Case.instances[nombre_casilla]
